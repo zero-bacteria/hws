@@ -126,7 +126,7 @@ print("""
 
 > 다음은 이차 방정식의 근을 찾는 수식이다. 이를 파이썬 코드로 작성하시오.
 
-![image](2021.01.18 Homework.assets/87770068-7774a880-c859-11ea-8433-7be4ad1fa4e4.png)
+![image](Homework 0118.assets/87770068-7774a880-c859-11ea-8433-7be4ad1fa4e4.png)
 
 ```python
 answer1 = ((-b+(b**2-4*a*c)**0.5)/2*a)
