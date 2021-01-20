@@ -60,10 +60,14 @@ n = len(s)
 if n%2:
     result = s[((n//2))]
 else :
-    result = (s[n/2]+s[n/2+1])/2
+    result = (s[n/2]+s[n/2-1])/2
     print('예측된 중앙값 입니다.')
     
 print(result)
+
+# len 안쓰고 연습해보기 
+
+# for _ in numbes 해도 됨 안쓸때는 _로 대체 가능 
 ```
 
 
