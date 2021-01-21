@@ -1,4 +1,4 @@
-# workshop 0121
+# Workshop 0121
 
 > python 04. 함수
 
@@ -56,6 +56,8 @@ print(answer)
 
 
 
+
+
 ## 3. 강한 이름
 
 문자열 2개를 전달 받아 두 문자열의 각 문자에 대응되는 아스키 숫자들의 합을 비교하여 더 큰 합을 가진 문자열을 반환하는 get_strong_word 함수를 작성하시오.
@@ -77,9 +79,9 @@ def get_strong_word(a,b):
     value_a = get_secret_number(a)
     value_b = get_secret_number(b)
     if value_a>value_b:
-        print(a)
+        return a
     else:
-        print (b)
+        return b
 
 get_strong_word('z','a')
 get_strong_word('tom', 'john')
