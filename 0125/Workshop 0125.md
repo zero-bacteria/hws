@@ -42,7 +42,13 @@ print(get_dict_avg({
 })) #=>85.5
 ```
 
-
+```python
+# 또다른 방법
+result=[]
+for score in scores.values():
+	result.append(score)
+	return result
+```
 
 
 
@@ -79,7 +85,37 @@ print(count_blood([
     ]))#=> {'A':3, 'B':3, 'O':3, 'AB':3}
 ```
 
-* 추가로 .get으로 지정하면 안되는 이유 알아보기
+* 추가로 .get으로 지정하면 안되는 이유 알아보기 --> 됨, 아래와 같다
+
+```python
+def count_blood(blood_list):
+    # 1. 결과값 변수 초기화
+    blood_dict = {}
+    
+    # 2. blood_list 순회
+    for blood in blood_list:
+        # 혈액형 정보가 존재하면
+        if blood_dict.get(blood):
+            blood_dict[blood] +=1 # 1더하기
+            #혈액형 정보가 없으면
+            else:
+                blood_dict[blood] = 1 # 1로 초기화
+```
+
+```python
+# 더 간단히 하는 방식
+
+for blood in blood_list:
+    # 혈액형 정보가 존재하면 - > 0이 아님 -> 기존값+1
+    # 혈액형 정보가 없으면  - > 0 -> 0+1 (1로 초기화)
+    blood_dict[blood] = blood_dict.get(blood, 0) + 1
+    
+return blood_dict
+```
+
+* get 함수가 없으면 none 을 반환하는 것을 이용 추가로 none 대신 0을 반환하게 만드는 원리
+
+  
 
 
 
