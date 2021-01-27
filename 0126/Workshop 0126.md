@@ -42,6 +42,30 @@ print(duplicated_letters('banana')) #=> ['a', 'n']
 
 
 
+```python
+# 교수님 풀이
+def duplicated_letters(word):
+    duplicates = []
+
+    for char in word:
+        if (word.count(char) > 1) and (char not in duplicates):
+            duplicates.append(char)
+
+    return duplicates
+
+
+
+print(duplicated_letters('apple'))
+print(duplicated_letters('banana'))
+
+```
+
+* 조건을 하나 더줘서 실행함
+
+
+
+
+
 
 
 ## 2. 소대소대
