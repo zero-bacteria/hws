@@ -31,7 +31,7 @@ $ pip install faker
 
 (1) faker를 설치하기 위함
 
-(2) git bash에서 실행
+(2) git bash에서 실행(아무데서나)
 
 
 
@@ -98,7 +98,7 @@ class Faker():
 
 (b) self
 
-(c) name
+(c) language='en_US'
 
 
 
@@ -154,4 +154,12 @@ print(fake2.name())		# 2
 ```
 
 seed()와 seed_instance()는 각각 어떠한 용도로 쓰일 수 있는지 작성하시오.
+
+
+
+seed() 는 일정한 패턴으로 출력되게 하는것
+
+
+
+seed_instance()는 인스턴스 변수를 바꿔줘  다른 패턴으로 출력됨
 
