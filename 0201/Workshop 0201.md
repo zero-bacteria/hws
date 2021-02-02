@@ -17,9 +17,11 @@
 
 단, 이미지가 제대로 출력되지 않을 때는 ssafy 문자열이 출력 되도록 작성하시오.
 
-![image-20210201214742051](Workshop 0201.assets/image-20210201214742051.png)
+![image-20210202170123019](Workshop 0201.assets/image-20210202170123019.png)
 
 
+
+![image-20210202170129518](Workshop 0201.assets/image-20210202170129518.png)
 
 ```html
 <img src="C:\Users\user\Desktop\SSAFY 코딩\hws\0201" alt="ssafy">
@@ -45,6 +47,8 @@
 <img src="my_photo.png" alt="ssafy">
 ```
 
+/my_photo.png"
+
 
 
 
@@ -64,6 +68,42 @@
 ```
 
 
+
+
+
+## 4. 선택자
+
+1) 아래의 코드를 작성하고 결과를 확인 하시오.
+
+![image-20210202170206213](Workshop 0201.assets/image-20210202170206213.png)
+
+![image-20210202170214572](Workshop 0201.assets/image-20210202170214572.png)
+
+
+
+
+
+2) nth-child를 nth-of-type으로 변경하고 결과를 확인하시오.
+
+![image-20210202170225125](Workshop 0201.assets/image-20210202170225125.png)
+
+
+
+(1),(2) 결과
+
+![제목 없음](Workshop 0201.assets/제목 없음.png)
+
+
+
+3) 작성한 코드를 참고하여 nth-child( )와 nth-of-type( )의 차이점을 작성하시오. 
+
+
+
+nth-child( ) 모든 자식요소 중 n번째 요소
+
+
+
+ nth-of-type( ) 부모의 특정 자식 중 2번째 요소 
 
 
 

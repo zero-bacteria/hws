@@ -11,9 +11,18 @@
 
 아래의 보기 (1) ~ (4) 중에서, HTML의 본딧말을 고르시오.
 
-![image-20210201172909120](C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210201172909120.png)
-
+(1) Hyperlinks and Text Markup Language
+(2) Home Tool Markup Language
 (3) Hyper Text Markup Language
+(4) Hyper Tool Markup Language
+
+
+
+
+
+**(3) Hyper Text Markup Language**
+
+
 
 
 
@@ -49,15 +58,16 @@
 
 아래의 보기 (1) ~ (4) 중에서, CSS의 본딧말을 고르시오.
 
-![image-20210201220114471](Workshop 0201.assets/image-20210201220114471.png)
+
+
+(1) Creative Style Sheets
+(2) Cascading Style Sheets
+(3) Computer Style Sheets
+(4) Colorful Style Sheets
 
 
 
-(2) Cascading Style sheets
-
-
-
-
+**(2) Cascading Style sheets**
 
 
 
@@ -69,7 +79,11 @@
 
 각 문항을 읽고 맞으면 T, 틀리면 F를 작성하시오.
 
-
+1) HTML과 CSS는 각자 문법을 갖는 별개의 언어이다.
+2) 웹 브라우저는 내장 기본 스타일이 있어 CSS가 없어도 작동한다.
+3) 자식 요소 프로퍼티는 부모의 프로퍼티를 모두 상속 받는다.
+4) 디바이스마다 화면의 크기가 다른 것을 고려하여 상대 단위인 %를 사용한다.
+5) id 값은 유일해야 하므로 중복되어서는 안된다.
 
 
 
@@ -87,7 +101,7 @@
 
 CSS는 우선 적용되는 순서가 존재한다. 우선순위가 높은 순으로 나열하시오.
 
-
+![image-20210202170544492](Homework 0201.assets/image-20210202170544492.png)
 
 
 
