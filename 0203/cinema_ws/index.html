@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+  rel="stylesheet" 
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+  crossorigin="anonymous">
+</head>
+<body>
+  <!-- 1. Nav -->
+  <!-- 뷰포트 기준으로 붙게 하기  -->
+  <!-- bg-dark 써서 검은색 배경 -->
+  <!-- 양끝에 붙게하기 위해서 d-flex씀  -->
+  <nav class="fixed-top bg-dark d-flex justify-content-between">
+    <a href="#">
+      <img src="images/logo.png" alt="Logo Image">
+    </a>
+    <!-- 수평으로 바꿔줘야함 -->
+    <!-- bootstrap docs 들어가서  -->
+    <!-- 리스트 간격 맞추기 위해서 2rem -->
+    <!-- 양쪽 1rem으로 접근 -->
+    <!-- a태그의 기본형인 파란색 제거 -->
+    <!-- 글자색 하얀색 -->
+    <!-- 글자들 가운데로 -->
+    <!-- ul 태크의 마진 없애기 -->
+    <!-- ul 태그 기본으로 생기는 점 없애기 -->
+    <!-- 오른쪽 살짝 띄워주기 -->
+    <ul class="d-flex align-items-center mb-0 me-3 list-unstyled">
+      <li><a href="#" class="mx-3 text-decoration-none text-white">Home</a></li>
+      <li><a href="#" class="mx-3 text-decoration-none text-white">Community</a></li>
+      <li><a href="#" class="mx-3 text-decoration-none text-white">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- 2. Header -->
+  <!--  주축을 바꿔주기 -->
+  <!-- 수평 수직 정렬 -->
+  <!-- 글자 하얀색 -->
+  <!-- font weight bold -->
+  <!-- display 이용 글자 크게 -->
+  <!-- btn 만들기 -->
+  <!-- btn primary 통해 버튼처럼 -->
+  <!-- btn 크게 -->
+  <!-- 위에 조금 떨어트리기 -->
+  <header class="d-flex flex-column justify-content-center align-items-center">
+      <div class="display-1 text-white fw-bold">Cinema</div>
+      <div class="display-1 text-white fw-bold">Community</div>
+      <a href="#" class="btn btn-primary btn-lg mt-4">Let's Go</a>
+  </header>
+
+  <!-- 3. Section -->
+
+  
+  <section>
+    <!-- h2 태그는 블락속성이니깐 너비를 다가지고 있음 -->
+    <h2 class="text-center my-5">Used Skills</h2>
+    <!-- article 밑의 세개를 수평으로 -->
+    <!-- 센터해서 마진을 줘도 되고 그냥 around 사용해도 됨 -->
+    <article class="d-flex justify-content-center">
+      <div class="mx-5 text-center">
+        <img src="images/web.png" alt="Web Image">
+        <p>Web</p>
+      </div>
+      <div class="mx-5 text-center">
+        <img src="images/html5.png" alt="HTML5 Image">
+        <p>HTML5</p>
+      </div>
+      <div class="mx-5 text-center">
+        <img src="images/css3.png" alt="CSS3 Image">
+        <p>CSS3</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4. Footer -->
+  
+  <!-- 항상 최하단에 고정 -->
+  <!-- 파란색 배경 -->
+  <!-- 좌우 중앙정렬 -->
+  <!-- 텍스트 하얀색 -->
+  <footer class="fixed-bottom bg-primary d-flex justify-content-center align-items-center text-white">
+    <!-- 마진바텀이 들어가 있어서 0줌 -->
+    <p class="mb-0">HTML & CSS project. Created by zero-bacteria</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" 
+  crossorigin="anonymous"></script>
+</body>
+</html>
