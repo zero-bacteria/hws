@@ -18,6 +18,14 @@ Django가 Model 에 생긴 변화를 DB 에 반영하는 방법 을 뜻하는 �
 
 
 
+```
+migration
+```
+
+
+
+
+
 
 
 ## 2. Model 변경사항 저장하기
@@ -28,9 +36,29 @@ Django가 Model 에 생긴 변화를 DB 에 반영하는 방법 을 뜻하는 �
 
 
 
+```bash
+$ python manage.py makemigrations
+```
+
+```bash
+$ python manage.py migrate
+```
+
+
+
+
+
+
+
 ## 3. Python Shell
 
 Django에서 사용 가능한 모듈 및 메서드를 대화식 Python Shell에서 사용하려고 할 때, 어떠한 명령어를 통해 해당 Shell을 실행할 수 있는지 작성하시오.
+
+
+
+```bash
+$ python manage.py shell
+```
 
 
 
@@ -39,3 +67,16 @@ Django에서 사용 가능한 모듈 및 메서드를 대화식 Python Shell에�
 ## 4. Django Model Field
 
 Django에서 Model을 정의할 때 사용할 수 있는 필드 타입을 5가지 이상 작성하시오.
+
+
+
+CharField
+
+DateField
+
+DateTimeField
+
+TextField
+
+FileField
+

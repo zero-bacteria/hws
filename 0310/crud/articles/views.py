@@ -1,11 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Article
 
 # Create your views here.
 def index(request):
-    # 모든 게시글을 조회
+
     articles = Article.objects.all()
+
     context = {
-        'articles': articles,
+        'articles' : articles,
     }
+
     return render(request, 'articles/index.html', context)
+
+def new(request):
+    return render(request, 'articles/new.html')
+
+def create(request):
+    if request.method == "POST":
+        articles = Article()
+
+        articles.title = request.POST.get('title')
+        articles.content = request.POST.get('content')
+
+        articles.save()
+
+    return redirect('articles:index')
+
+def detail(request):
+    return render(request, 'articles/detail.html')
+
