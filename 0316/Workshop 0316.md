@@ -74,7 +74,8 @@ context = {
 ![image-20210316160714482](Workshop 0316.assets/image-20210316160714482.png)
 
 ```
-(a) 
+(a)
+
 as_p
 as_ul
 as_table
