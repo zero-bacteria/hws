@@ -22,3 +22,22 @@ https://getbootstrap.com/docs/5.0/getting-started/download/
 
 
 
+
+
+1. crud/static/stylesheets 경로 만들기
+   1. 부트스트랩 css 파일넣기
+   2. 부트스트랩 js 파일넣기
+2. base.html 에
+
+```django
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'stylesheets/bootstrap.css' %}">
+
+
+<script src="{% static 'javascript/bootstrap.js' %}"></script>
+
+```
+
+3.  crud/ settings.py
+   1. STATICFILES_DIRS=[ BASE_DIR / 'crud' / 'static']
