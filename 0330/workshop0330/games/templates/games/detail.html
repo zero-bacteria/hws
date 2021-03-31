@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+  <h2>DETAIL</h2>
+  <p><b>작성자 : {{ game.user }}</b></p>
+  <h3>{{ game.title }}</h3>
+
+  <form action="{% url 'games:choice' game.pk "left_side" %}" method="POST">
+    {% csrf_token %}
+    <p>글 번호 : {{ game.pk }}</p>
+    <p>선택1</p>
+    <button>{{ game.left_side }}</button>
+    <p>통계:  {{ game.left_number }}명, {{ left }}%</p>
+  </form>
+  <form action="{% url 'games:choice' game.pk "right_side" %}" method="POST">
+    {% csrf_token %}
+    <p>선택2</p>
+    <button>{{ game.right_side }}</button>
+    <p>통계:  {{ game.right_number }}명, {{ right }}%</p>
+    <a href="{% url 'games:detail' game.pk %}">[DETAIL]</a>
+    <hr>
+  </form>
+  <hr>
+  {% if request.user == game.user %}
+    <a href="{% url 'games:update' game.pk %}" class="btn btn-primary">[UPDATE]</a>
+    <form action="{% url 'games:delete' game.pk %}" method="POST">
+      {% csrf_token %}
+      <button class="btn btn-danger">DELETE</button>
+    </form>
+  {% endif %}
+  <a href="{% url 'games:index' %}">[back]</a>
+  <hr>
+  <h4>댓글 목록</h4>
+  <p>{{ comments|length }}개의 댓글이 있습니다.</p>
+  <ul>
+    {% for comment in comments %}
+      <li>
+        {{ comment.user }} - {{ comment.content }}
+        {% if request.user == comment.user %}
+          <form action="{% url 'games:comments_delete' game.pk comment.pk %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <input type="submit" value="DELETE">
+          </form>
+        {% endif %}
+      </li>
+    {% empty %}
+      <p>아직 댓글이 없네요...</p>
+    {% endfor %}
+  </ul>
+  <hr>
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'games:comments_create' game.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form }}
+      <input type="submit">
+    </form>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">[댓글을 작성하려면 로그인 하세요.]</a>
+  {% endif %}
+{% endblock %}
+  

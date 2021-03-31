@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Games</h1>
+  {% if request.user.is_authenticated %}
+    <a href="{% url 'games:create' %}">[CREATE]</a>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">[새 글을 작성하려면 로그인하세요.]</a>
+  {% endif %}
+  <hr>
+  <p><b>누르시면 자동으로 이동합니다.</b></p>
+  <hr>
+  {% for game in games %}
+    <form action="{% url 'games:choice' game.pk "left_side" %}" method="POST">
+      {% csrf_token %}
+      <p><b>작성자 : {{ game.user }}</b></p>
+      <p>글 번호 : {{ game.pk }}</p>
+      <h3>{{ game.title }}</h3>
+      <button>{{ game.left_side }}</button>
+      <button>{{ game.right_side }}</button>
+    </form>
+    <br>
+    <a href="{% url 'games:detail' game.pk %}">[DETAIL]</a>
+    <hr>
+  {% endfor %}
+  <hr>
+  
+
+{% endblock %}
