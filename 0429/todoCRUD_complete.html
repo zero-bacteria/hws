@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      text-decoration: line-through
+    }
+  </style>
+</head>
+<body>
+  <form action="/todos/">
+  <input type="text">
+  <button>Todo</button>
+  </form>
+  <ul></ul>
+  <script>
+
+    function addTodo () {
+      event.preventDefault()
+      const input = document.querySelector('input')
+      const content = input.value
+      
+      // 빈 상태에서 넘어가지 못하게 하기
+      // trim - 띄어쓰는 것을 없애버림
+      if (content.trim()) {
+        const li = document.createElement('li')
+        li.innerText = content
+
+        const ul = document.querySelector('ul')
+        ul.appendChild(li)
+
+        li.addEventListener('click', function (event) { 
+          // if (event.target.classList.length) {
+          //   event.target.classList.add('done')
+          // } else {
+          //   event.target.classList.remove('done')
+          // }
+          event.target.classList.toggle('done')
+        })
+
+        const deleteBtn = document.createElement('button')
+        deleteBtn.innerText = 'X'
+
+        li.appendChild(deleteBtn)
+
+        deleteBtn.addEventListener('click', function () {
+          event.target.parentNode.remove()
+          // return li.remove()
+          // 두개 차이점은 li는 밖에 있는데 클로저 개념으로 접근됨
+        })
+        
+        // // 취소선 만들기
+        // li.style.textDecoration = 'line-through'
+
+      } else {
+        alert('할 일을 입력해주세요.')
+      }
+      
+      event.target.reset() // input.value를 초기화
+    }
+    
+    // // 클릭으로 하는것
+    // const btn = document.querySelector('button')
+    // btn.addEventListener('click', addTodo)
+
+    // 다른것
+    const form = document.querySelector('form')
+    form.addEventListener('submit', addTodo)
+
+
+
+  </script>
+</body>
+</html>
