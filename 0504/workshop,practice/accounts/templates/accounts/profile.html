@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ person.username }}님의 프로필</h1>
+
+{% with followings=person.followings.all followers=person.followers.all %}
+  <div>
+    <div>
+      팔로잉 : {{ followings|length }} / 팔로워 : {{ followers|length }}
+    </div>
+    {% if request.user != person %}
+      <div>
+        <form class="follow-form" data-user-id="{{ person.pk }}">
+          {% csrf_token %}
+          {% if request.user in followers %}
+            <button >언팔로우</button>
+          {% else %}
+            <button >팔로우</button>
+          {% endif %}
+        </form>
+      </div>
+    {% endif %}
+  </div>
+{% endwith %}
+
+
+<hr>
+
+<h2>{{ person.username }}'s 게시글</h2>
+{% for article in person.article_set.all %}
+  <div>{{ article.title }}</div>
+{% endfor %}
+
+<hr>
+
+<h2>{{ person.username }}'s 댓글</h2>
+{% for comment in person.comment_set.all %}
+  <div>{{ comment.content }}</div>
+{% endfor %}
+
+<hr>
+
+<h2>{{ person.username }}'s likes</h2>
+{% for article in person.like_articles.all %}
+  <div>{{ article.title }}</div>
+{% endfor %}
+
+<hr>
+
+<a href="{% url 'articles:index' %}">[back]</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const forms = document.querySelectorAll('.follow-form')
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+
+  forms.forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+
+      const userId = event.target.dataset.userId
+      
+      console.log(userId)
+      axios.post(`http://127.0.0.1:8000/accounts/${userId}/follow/`, {}, {headers: {'X-CSRFToken': csrftoken}
+      }).then(function (response) {
+        const followed = response.data.followed
+        const count = response.data.count
+        
+        console.log(response)
+        const followButton = document.querySelector(".follow-form > button")
+        if (followed) {
+          followButton.innerText = '언팔로우'
+        } else {  
+          followButton.innerText = '팔로우'
+        }
+
+        const followCount = document.querySelector(`#follow-count-${userId}`)
+        followCount.innerText = `${count}명이 이 글을 좋아합니다.`
+      })
+
+    })
+  })
+</script>
+
+{% endblock %}
+
+
